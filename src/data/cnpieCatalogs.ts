@@ -1,0 +1,408 @@
+import type {CategoryExplanation, CategoryId, PedagogicalLogic} from '../types/cnpie';
+
+export const CATEGORY_EXPLANATIONS: Record<CategoryId, CategoryExplanation> = {
+  '2A': {
+    shortName: 'Consolidado',
+    fullTitle: 'Categoría 1: Proyectos de Innovación Educativa Consolidados (Anexo N° 2A)',
+    linea: 'Línea 1 · Proyectos de Innovación Educativa',
+    trayectoria: '2 años o más de implementación verificable en aula e IE.',
+    dirigidoA: 'IIEE públicas de Educación Básica (EBR, EBA y EBE), ámbitos urbanos, rurales y EIB.',
+    financiamiento:
+      'Hasta S/ 18,000 (EIB Amazónico hasta S/ 21,600) · 70% Bienes / 30% Servicios.',
+    explicacion:
+      'Reconoce experiencias educativas sostenidas durante al menos dos años escolares que demuestran resultados cuantitativos y cualitativos comprobables frente a su línea de base. Evalúa el diagnóstico causal, la originalidad frente a la enseñanza tradicional, la pertinencia estudiantil y territorial, la participación de actores, la institucionalización en PEI/PAT/PCI y un apartado específico de Resultados Verificables (Numeral 6) refrendados por la Dirección.',
+    requisitosClave: [
+      'Incluye Secciones 1 a 6 (destaca el Numeral 6.1.1 Antes vs. Después y 6.1.2 monitoreo docente en 2 momentos).',
+      'Árbol de Problemas y Objetivos, Plan de Actividades (Cuadro A) y Presupuesto Anexo N° 5 (Cuadro B).',
+      'Video público en YouTube (máx. 3 min), actas SIAGIE/evidencias PDF refrendadas y Anexos 3 y 4.',
+    ],
+  },
+  '2B': {
+    shortName: 'Promisorio',
+    fullTitle: 'Categoría 2: Proyectos de Innovación Educativa Promisorios (Anexo N° 2B)',
+    linea: 'Línea 1 · Proyectos de Innovación Educativa',
+    trayectoria: 'En etapa de formulación o con menos de 2 años de ejecución.',
+    dirigidoA: 'IIEE públicas de Educación Básica (EBR, EBA y EBE), ámbitos urbanos, rurales y EIB.',
+    financiamiento:
+      'Hasta S/ 18,000 (EIB Amazónico hasta S/ 21,600) · 70% Bienes / 30% Servicios.',
+    explicacion:
+      'Impulsa propuestas pedagógicas nuevas o emergentes que plantean una solución creativa, pertinente y viable para revertir un problema educativo diagnosticado en la IE. No exige resultados multianuales previos (llega hasta el Numeral 5), pero evalúa con rigor la coherencia lógica entre causas y objetivos SMART, el valor agregado frente a prácticas convencionales, la voz estudiantil/territorial y las estrategias de sostenibilidad e institucionalización.',
+    requisitosClave: [
+      'Comprende Secciones 1 a 5 (Intencionalidad, Originalidad, Pertinencia, Participación y Sostenibilidad).',
+      'Árbol de Problemas y Objetivos, Cuadro A de Actividades 2027 y Cuadro B Anexo N° 5.',
+      'Video público en YouTube (máx. 3 min), evidencias diagnósticas y territoriales PDF y Anexos 3 y 4.',
+    ],
+  },
+  '2C': {
+    shortName: 'Productivo SFT',
+    fullTitle: 'Categoría 3: Proyectos Productivos MSE-SFT (Anexo N° 2C)',
+    linea: 'Línea 1 · Categoría 3 · Proyectos Productivos',
+    trayectoria: 'Vinculado a una especialidad técnica y módulo formativo CNOF con prototipo validado.',
+    dirigidoA:
+      'Exclusivo para IIEE públicas del Modelo de Servicio Educativo Secundaria con Formación Técnica (MSE-SFT).',
+    financiamiento: 'Hasta S/ 70,000 · 80% Bienes / 20% Servicios (equipamiento y asistencia técnica).',
+    explicacion:
+      'Fortalece competencias técnicas, emprendedoras y laborales del CNEB y del Catálogo Nacional de la Oferta Formativa (CNOF) mediante la creación y mejora iterativa de un bien o servicio con demanda real en el entorno. Exige aplicar Design Thinking con prototipo V1 y V2 validado por usuarios, articular alianzas con el sector productivo (CETPRO, IEST o empresas locales) y sistematizar evidencias del proceso formativo-productivo.',
+    requisitosClave: [
+      'Incluye diseño y validación de Prototipo V1/V2 (2.1.2) y Sistematización productiva (5.3.1).',
+      'Dossier de Prototipo, Customer Journey, Mapas de Empatía, Matriz de Actores y Cartas de Intención.',
+      'Cuadro A y Cuadro B (80% Bienes / 20% Servicios hasta S/ 70,000), video de 3 min y Anexos 3 y 4.',
+    ],
+  },
+  '2D': {
+    shortName: 'IAPE',
+    fullTitle:
+      'Categoría 4: Investigación-Acción Participativa Educativa - IAPE (Anexo N° 2D)',
+    linea: 'Línea 2 · Investigación Aplicada en Educación',
+    trayectoria: 'Ciclo espiral de investigación-acción participativa con docentes y estudiantes.',
+    dirigidoA:
+      'IIEE públicas de Educación Básica (EBR, EBA y EBE) enfocadas en transformar su práctica mediante investigación aplicada.',
+    financiamiento: 'Hasta S/ 14,000 · 70% Bienes / 30% Servicios.',
+    explicacion:
+      'Promueve que el equipo directivo, docente y los propios estudiantes actúen como co-investigadores para comprender y transformar una problemática de aula. Se distingue por exigir pregunta e hipótesis de acción participativa, diagnóstico con contraste de 4+ fuentes, la Ruta Metodológica Espiral en 4 momentos (deconstrucción, planificación, acción/observación y reflexión con devolución de hallazgos), triangulación rigurosa y resguardo ético.',
+    requisitosClave: [
+      'Estructura IAPE: Justificación, Diseño Metodológico Espiral (4 momentos), Co-investigación y Consistencia.',
+      'Diarios de campo docentes, bitácoras estudiantiles, matriz de triangulación y jornadas de devolución.',
+      'Consentimiento informado y asentimiento (Ley N° 29733), video de 3 min y Anexos 3 y 4.',
+    ],
+  },
+};
+
+export const TEMATICAS_CNPIE: string[] = [
+  '1. Desarrollo de competencias comunicativas y matemáticas',
+  '2. Indagación científica, tecnología e innovación escolar',
+  '3. Ciudadanía activa, convivencia democrática e interculturalidad',
+  '4. Educación ambiental, cambio climático y gestión del riesgo',
+  '5. Educación Intercultural Bilingüe (EIB) y diálogo de saberes',
+  '6. Educación inclusiva y atención a la diversidad (DUA)',
+  '7. Bienestar socioemocional, tutoría y prevención de violencia',
+  '8. Emprendimiento, educación financiera y proyectos productivos',
+  '9. Transformación digital, pensamiento computacional e IA ética',
+  '10. Arte, cultura, patrimonio e identidad territorial',
+  '11. Educación física, vida activa y alimentación saludable',
+  '12. Liderazgo pedagógico directivo y comunidades profesionales',
+  '13. Evaluación formativa, autonomía y metacognición',
+];
+
+export const COMPETENCIAS_CNEB: string[] = [
+  'C1: Construye su identidad',
+  'C2: Convive y participa democráticamente en la búsqueda del bien común',
+  'C3: Construye interpretaciones históricas',
+  'C4: Gestiona responsablemente el espacio y el ambiente',
+  'C5: Gestiona responsablemente los recursos económicos',
+  'C6: Se desenvuelve de manera autónoma a través de su motricidad',
+  'C7: Asume una vida saludable',
+  'C8: Se comunica oralmente en su lengua materna',
+  'C9: Lee diversos tipos de textos escritos en su lengua materna',
+  'C10: Escribe diversos tipos de textos en su lengua materna',
+  'C11: Se comunica oralmente en castellano como segunda lengua',
+  'C12: Lee diversos tipos de textos escritos en castellano como segunda lengua',
+  'C13: Escribe diversos tipos de textos en castellano como segunda lengua',
+  'C14: Se comunica oralmente en inglés como lengua extranjera',
+  'C15: Lee diversos tipos de textos escritos en inglés como lengua extranjera',
+  'C16: Escribe diversos tipos de textos en inglés como lengua extranjera',
+  'C17: Crea proyectos desde los lenguajes artísticos',
+  'C18: Aprecia de manera crítica manifestaciones artístico-culturales',
+  'C19: Resuelve problemas de cantidad',
+  'C20: Resuelve problemas de regularidad, equivalencia y cambio',
+  'C21: Resuelve problemas de forma, movimiento y localización',
+  'C22: Resuelve problemas de gestión de datos e incertidumbre',
+  'C23: Indaga mediante métodos científicos para construir sus conocimientos',
+  'C24: Explica el mundo físico basándose en conocimientos sobre seres vivos',
+  'C25: Diseña y construye soluciones tecnológicas para resolver problemas',
+  'C26: Construye su identidad como persona humana (Educación Religiosa)',
+  'C27: Gestiona proyectos de emprendimiento económico o social',
+  'C28: Se desenvuelve en entornos virtuales generados por las TIC',
+  'C29: Gestiona su aprendizaje de manera autónoma',
+  'C30: Interactúa a través de sus habilidades sociomotrices',
+  'C31: Asume la experiencia del encuentro personal y comunitario',
+];
+
+export const RUBRO_ACCENT_COLORS = [
+  {
+    name: 'Carmesí',
+    accent: '#991b1b',
+    cardBorder: 'border-red-300',
+    headerBg: 'bg-red-50/60 border-red-200',
+    topStripe: 'bg-red-700',
+    badge: 'bg-red-800 text-white',
+    titleText: 'text-red-800',
+    subText: 'text-red-700',
+    editorText: 'text-red-900',
+    progressBar: 'bg-red-700',
+    progressTrack: 'bg-red-100',
+    focusBorder: 'focus:border-red-700',
+  },
+  {
+    name: 'Esmeralda',
+    accent: '#0f766e',
+    cardBorder: 'border-teal-300',
+    headerBg: 'bg-teal-50/60 border-teal-200',
+    topStripe: 'bg-teal-700',
+    badge: 'bg-teal-700 text-white',
+    titleText: 'text-teal-800',
+    subText: 'text-teal-700',
+    editorText: 'text-teal-900',
+    progressBar: 'bg-teal-700',
+    progressTrack: 'bg-teal-100',
+    focusBorder: 'focus:border-teal-700',
+  },
+  {
+    name: 'Azul',
+    accent: '#1d4ed8',
+    cardBorder: 'border-blue-300',
+    headerBg: 'bg-blue-50/60 border-blue-200',
+    topStripe: 'bg-blue-700',
+    badge: 'bg-blue-700 text-white',
+    titleText: 'text-blue-800',
+    subText: 'text-blue-700',
+    editorText: 'text-blue-900',
+    progressBar: 'bg-blue-700',
+    progressTrack: 'bg-blue-100',
+    focusBorder: 'focus:border-blue-700',
+  },
+  {
+    name: 'Ámbar',
+    accent: '#b45309',
+    cardBorder: 'border-amber-300',
+    headerBg: 'bg-amber-50/60 border-amber-200',
+    topStripe: 'bg-amber-700',
+    badge: 'bg-amber-700 text-white',
+    titleText: 'text-amber-800',
+    subText: 'text-amber-700',
+    editorText: 'text-amber-900',
+    progressBar: 'bg-amber-700',
+    progressTrack: 'bg-amber-100',
+    focusBorder: 'focus:border-amber-700',
+  },
+  {
+    name: 'Violeta',
+    accent: '#6d28d9',
+    cardBorder: 'border-violet-300',
+    headerBg: 'bg-violet-50/60 border-violet-200',
+    topStripe: 'bg-violet-700',
+    badge: 'bg-violet-700 text-white',
+    titleText: 'text-violet-800',
+    subText: 'text-violet-700',
+    editorText: 'text-violet-900',
+    progressBar: 'bg-violet-700',
+    progressTrack: 'bg-violet-100',
+    focusBorder: 'focus:border-violet-700',
+  },
+  {
+    name: 'Bosque',
+    accent: '#047857',
+    cardBorder: 'border-emerald-300',
+    headerBg: 'bg-emerald-50/60 border-emerald-200',
+    topStripe: 'bg-emerald-700',
+    badge: 'bg-emerald-700 text-white',
+    titleText: 'text-emerald-800',
+    subText: 'text-emerald-700',
+    editorText: 'text-emerald-900',
+    progressBar: 'bg-emerald-700',
+    progressTrack: 'bg-emerald-100',
+    focusBorder: 'focus:border-emerald-700',
+  },
+  {
+    name: 'Granate',
+    accent: '#be185d',
+    cardBorder: 'border-rose-300',
+    headerBg: 'bg-rose-50/60 border-rose-200',
+    topStripe: 'bg-rose-700',
+    badge: 'bg-rose-700 text-white',
+    titleText: 'text-rose-800',
+    subText: 'text-rose-700',
+    editorText: 'text-rose-900',
+    progressBar: 'bg-rose-700',
+    progressTrack: 'bg-rose-100',
+    focusBorder: 'focus:border-rose-700',
+  },
+];
+
+export const PEDAGOGICAL_LOGIC_MAP: Record<string, PedagogicalLogic> = {
+  p1_1_1: {
+    focus: 'Diagnóstico basado en evidencias reales (SIAGIE, ENLA 2025, Evaluación Diagnóstica 2026) y Árbol de Problemas.',
+    sequence: '1. Línea de base porcentual → 2. Problema central → 3. Tres causas directas → 4. Tres consecuencias en aprendizajes.',
+    rubricCriteria: 'Nivel IV exige describir el problema con evidencias cuantitativas/cualitativas verificables, identificando al menos 3 causas directas y 3 efectos claros.',
+    suggestions: [
+      'Incorporar porcentajes exactos de niveles Inicio, Proceso y Logrado de la Evaluación Diagnóstica 2026 y actas SIAGIE.',
+      'Vincular explícitamente las causas con el Árbol de Problemas adjunto (práctica docente expositiva, descontextualización y escasez de materiales).',
+      'Precisar la población total atendida por grado, ciclo y sexo en la Institución Educativa.',
+    ],
+  },
+  p1_1_2: {
+    focus: 'Triangulación de impacto en tres dimensiones: Competencias CNEB, Práctica Docente y Gestión Escolar.',
+    sequence: '1. Brecha en competencias CNEB → 2. Limitaciones didácticas en aula → 3. Necesidad de fortalecimiento en PEI/PAT.',
+    rubricCriteria: 'Nivel IV valora que se explique cómo el problema afecta el desarrollo integral de los estudiantes y la práctica pedagógica colegiada.',
+    suggestions: [
+      'Detallar las capacidades específicas del CNEB que los estudiantes aún no logran movilizar de manera combinada.',
+      'Sustentar por qué la retroalimentación actual requiere transitar hacia la retroalimentación reflexiva o por descubrimiento.',
+      'Conectar el problema con los Compromisos de Gestión Escolar (CGE 1: Desarrollo integral de las y los estudiantes).',
+    ],
+  },
+  p1_2_1: {
+    focus: 'Formulación rigurosa bajo criterios SMART (Específico, Medible, Alcanzable, Relevante y Temporalizado al 2027).',
+    sequence: '1. Objetivo General con meta porcentual 2027 → 2. OE1 Metodología/Aula → 3. OE2 Recursos/Productos → 4. OE3 Gestión/Comunidad.',
+    rubricCriteria: 'Nivel IV exige que cada objetivo contenga verbo en infinitivo, cambio esperado, población beneficiaria, medio y plazo (2027).',
+    suggestions: [
+      'Incluir metas cuantitativas verificables al cierre de 2027 (ej. elevar del 18% al 75% el nivel Logrado).',
+      'Asegurar que cada Objetivo Específico corresponda directamente a una de las causas del diagnóstico.',
+      'Explicitar el horizonte temporal de ejecución (marzo a diciembre de 2027).',
+    ],
+  },
+  p1_2_2: {
+    focus: 'Articulación causal directa entre diagnóstico y objetivos con enfoque centrado en el estudiante.',
+    sequence: '1. Vínculo OE1 ↔ Causa 1 → 2. Vínculo OE2 ↔ Causa 2 → 3. Vínculo OE3 ↔ Causa 3 y protagonismo estudiantil.',
+    rubricCriteria: 'Nivel IV evalúa la consistencia lógica interna y el rol activo del estudiante como protagonista de su aprendizaje.',
+    suggestions: [
+      'Explicitar cómo el estudiante pasa de receptor pasivo a protagonista que indaga, experimenta y autoevalúa su progreso.',
+      'Destacar la atención a la diversidad bajo el Diseño Universal para el Aprendizaje (DUA) para que ningún estudiante quede atrás.',
+    ],
+  },
+  p2_1_1: {
+    focus: 'Secuencia didáctica y metodológica de la solución innovadora sustentada en el CNEB y enfoque por competencias.',
+    sequence: '1. Fundamento pedagógico → 2. Fases metodológicas → 3. Rol mediador docente y rol activo estudiantil → 4. Evaluación formativa.',
+    rubricCriteria: 'Nivel IV exige describir paso a paso cómo funciona la innovación en el aula, sus fundamentos teóricos y evidencias de aprendizaje.',
+    suggestions: [
+      'Estructurar la metodología en 4 fases claras: Problematización situada, Indagación/Diseño colaborativo, Producción de evidencias y Socialización/Metacognición.',
+      'Explicitar el uso de rúbricas analíticas, listas de cotejo y portafolios de evidencias para la retroalimentación formativa.',
+      'Precisar la frecuencia de aplicación semanal o quincenal dentro de las unidades y proyectos de aprendizaje.',
+    ],
+  },
+  p2_1_2: {
+    focus: 'Valor agregado e innovación genuina frente a la enseñanza tradicional en el contexto local.',
+    sequence: '1. Práctica convencional previa → 2. Ruptura pedagógica/creativa → 3. Cuadro comparativo de transformación → 4. Valor agregado.',
+    rubricCriteria: 'Nivel IV distingue claramente qué hace diferente, creativo y transformador al proyecto respecto a lo que se hacía antes.',
+    suggestions: [
+      'Contrastar punto por punto la enseñanza tradicional (memorística y aislada) frente a la propuesta innovadora (situada, colaborativa y creativa).',
+      'Resaltar el aprovechamiento creativo de recursos del territorio y saberes comunitarios integrados al CNEB.',
+    ],
+  },
+  p3_1_1: {
+    focus: 'Pertinencia psicopedagógica respaldada por 4 o más necesidades e intereses reales de los estudiantes.',
+    sequence: '1. Instrumento aplicado (encuesta/grupo focal) → 2. Cuatro necesidades/intereses con % → 3. Respuesta pedagógica del proyecto.',
+    rubricCriteria: 'Nivel IV exige sustentar al menos 4 necesidades e intereses estudiantiles con evidencias diagnósticas verificables.',
+    suggestions: [
+      'Detallar 4 hallazgos concretos recogidos de los estudiantes (aprendizaje activo, expresión oral, trabajo colaborativo y uso creativo de recursos).',
+      'Explicar cómo se adaptan las actividades a los distintos ritmos, estilos y niveles de desarrollo de los estudiantes.',
+    ],
+  },
+  p3_2_1: {
+    focus: 'Pertinencia territorial, ambiental, cultural y lingüística articulada a 4 o más demandas de la comunidad.',
+    sequence: '1. Diagnóstico territorial → 2. Cuatro demandas/potencialidades locales → 3. Diálogo de saberes e interculturalidad.',
+    rubricCriteria: 'Nivel IV valora la incorporación de saberes locales, lengua originaria (si aplica) y problemáticas reales del territorio.',
+    suggestions: [
+      'Identificar 4 potencialidades o demandas del distrito/comunidad (biodiversidad, historia local, actividades productivas y gestión ambiental).',
+      'Incorporar la participación de sabios locales (Yachaq) y familias como portadores de conocimiento vivo.',
+    ],
+  },
+  p4_1_1: {
+    focus: 'Gobernanza participativa con al menos 3 actores internos y 3 actores externos con roles definidos.',
+    sequence: '1. Actores internos (Directivo, Docentes, Estudiantes, APAFA) → 2. Actores externos (UGEL, Municipalidad, Aliados) → 3. Mecanismos de cogestión.',
+    rubricCriteria: 'Nivel IV exige detallar mecanismos concretos de participación de 3+ actores internos y 3+ externos respaldados con actas.',
+    suggestions: [
+      'Precisar el rol específico y aporte verificable de cada actor interno y externo durante las fases de planificación, ejecución y evaluación.',
+      'Mencionar los espacios formales de coordinación (Comité de Gestión Pedagógica, CONEI, mesas de trabajo comunal).',
+    ],
+  },
+  p4_2_1: {
+    focus: 'Coherencia técnica y financiera entre el Plan de Actividades (Cuadro A) y el Presupuesto (Cuadro B - Anexo 5).',
+    sequence: '1. Vinculación OE1-OE3 con actividades → 2. Justificación pedagógica de Bienes → 3. Justificación de Servicios → 4. Cumplimiento de topes.',
+    rubricCriteria: 'Nivel IV verifica que cada bien y servicio presupuestado responda estrictamente a una actividad pedagógica del Cuadro A.',
+    suggestions: [
+      'Explicar la relación directa entre cada partida de Bienes y Servicios y las actividades del Cuadro A.',
+      'Confirmar el respeto estricto a la proporción oficial (70%/30% u 80%/20%) y la transparencia en SIFINANCIA.',
+    ],
+  },
+  p5_1_1: {
+    focus: 'Estrategias de sostenibilidad pedagógica, organizacional y comunitaria desde el inicio hasta el cierre.',
+    sequence: '1. Capacidades instaladas en docentes → 2. Uso y cuidado de recursos → 3. Comunidad de aprendizaje → 4. Alianzas permanentes.',
+    rubricCriteria: 'Nivel IV requiere 4 o más estrategias viables que aseguren la continuidad del proyecto una vez concluido el financiamiento.',
+    suggestions: [
+      'Incluir la formación de Comunidades Profesionales de Aprendizaje (CPA) y pasantías internas entre docentes.',
+      'Establecer un protocolo institucional de inventario, mantenimiento y reposición solidaria de materiales con APAFA.',
+    ],
+  },
+  p5_1_2: {
+    focus: 'Institucionalización curricular y de gestión en PEI, PAT, PCI y Programaciones Anuales.',
+    sequence: '1. Actualización PEI → 2. Incorporación en PAT → 3. Integración en PCI y unidades → 4. Semanas de gestión.',
+    rubricCriteria: 'Nivel IV exige precisar cómo y en qué momentos del año escolar se incorpora la innovación en los documentos de gestión.',
+    suggestions: [
+      'Precisar las acciones concretas durante las Semanas de Gestión (marzo, julio y noviembre 2027) para actualizar PEI, PAT y PCI.',
+      'Asegurar que las unidades y proyectos de aprendizaje institucionalicen las estrategias y rúbricas diseñadas.',
+    ],
+  },
+  p5_1_3: {
+    focus: 'Sistema de monitoreo, seguimiento y evaluación formativa del proyecto (3+ mecanismos).',
+    sequence: '1. Qué se evalúa → 2. Instrumentos técnicos → 3. Responsables y momentos (Inicio, Proceso, Salida) → 4. Toma de decisiones.',
+    rubricCriteria: 'Nivel IV pide 3 o más mecanismos detallando indicadores, instrumentos, responsables, frecuencia y uso de resultados.',
+    suggestions: [
+      'Definir 3 momentos clave de evaluación (Entrada en marzo, Proceso en julio y Salida en noviembre 2027).',
+      'Especificar instrumentos concretos: rúbricas de desempeño estudiantil, fichas de monitoreo docente y encuestas de satisfacción.',
+    ],
+  },
+  p5_2_1: {
+    focus: 'Estrategia de comunicación, difusión y transferencia de aprendizajes a públicos internos y externos (4+).',
+    sequence: '1. Público objetivo → 2. Mensaje clave → 3. Canal/producto comunicacional → 4. Momento de difusión.',
+    rubricCriteria: 'Nivel IV exige 4 o más estrategias especificando público, canal, mensaje y momento de realización.',
+    suggestions: [
+      'Incluir Ferias Pedagógicas Abiertas (Día del Logro), boletines comunitarios, microprogramas radiales/digitales y pasantías con IIEE de la UGEL.',
+      'Vincular la difusión con el repositorio institucional y la Red de Docentes Innovadores del FONDEP.',
+    ],
+  },
+  p5_3_1: {
+    focus: 'Sistematización participativa de la experiencia educativa basada en evidencias verificables.',
+    sequence: '1. Registro continuo (bitácoras/portafolios) → 2. Reconstrucción crítica → 3. Lecciones aprendidas → 4. Guía transferible.',
+    rubricCriteria: 'Nivel IV evalúa la existencia de mecanismos sistemáticos para documentar lecciones aprendidas y producir un documento transferible.',
+    suggestions: [
+      'Detallar el uso de bitácoras pedagógicas, registros audiovisuales y talleres de reconstrucción histórica de la experiencia.',
+      'Prever la elaboración de una Guía Metodológica Contextualizada para compartir con otras IIEE.',
+    ],
+  },
+  p6_1_1: {
+    focus: 'Comparación rigurosa de 4 o más resultados alcanzados frente a la línea de base inicial.',
+    sequence: '1. Indicador de competencia/aprendizaje → 2. Línea de base inicial (%) → 3. Resultado actual alcanzado (%) → 4. Evidencia refrendada.',
+    rubricCriteria: 'Nivel IV (Categoría 1 Consolidados) exige 4+ resultados diferenciados con datos comparativos verificables y refrendados.',
+    suggestions: [
+      'Presentar una comparación clara Antes vs. Después en cada competencia priorizada, autonomía estudiantil y participación familiar.',
+      'Referenciar las evidencias PDF adjuntas (actas SIAGIE, portafolios y cuadro resumen refrendado por la Dirección).',
+    ],
+  },
+  p6_1_2: {
+    focus: 'Transformación verificable en la práctica pedagógica docente, gestión escolar y participación comunitaria.',
+    sequence: '1. Cambios en mediación y evaluación docente → 2. Cambios en liderazgo y gestión escolar → 3. Cambios en participación de familias/aliados.',
+    rubricCriteria: 'Nivel IV verifica evidencias de monitoreo docente en 2 momentos y acuerdos institucionales sostenidos.',
+    suggestions: [
+      'Contrastar los resultados del Momento 1 y Momento 2 de monitoreo en aula (uso de estrategias activas y retroalimentación reflexiva).',
+      'Evidenciar los acuerdos incorporados en las actas de Semanas de Gestión y CONEI.',
+    ],
+  },
+  p2_2_1: {
+    focus: 'Ruta metodológica espiral de la IAPE (4 momentos), técnicas participativas y resguardo ético.',
+    sequence: '1. Deconstrucción crítica → 2. Planificación participativa → 3. Acción transformadora y observación → 4. Reflexión, devolución y ética.',
+    rubricCriteria: 'Nivel IV exige describir los 4 momentos de la IAPE, instrumentos (diarios de campo, bitácoras) y consentimiento informado.',
+    suggestions: [
+      'Detallar los 4 momentos espirales de la IAPE con participación de estudiantes como co-investigadores.',
+      'Incluir explícitamente el consentimiento informado de familias y asentimiento de estudiantes bajo la Ley N° 29733.',
+    ],
+  },
+  p3_1_2: {
+    focus: 'Reflexión crítica colegiada, toma de decisiones compartidas y devolución de hallazgos.',
+    sequence: '1. Grupos de Interaprendizaje (GIA) → 2. Toma de decisiones democrática → 3. Jornadas de devolución de hallazgos.',
+    rubricCriteria: 'Nivel IV valora que los hallazgos se devuelvan en lenguaje accesible a estudiantes y familias para validar ajustes.',
+    suggestions: [
+      'Describir las asambleas colegiadas y jornadas de devolución donde estudiantes y familias validan los resultados.',
+      'Explicitar cómo se registran los acuerdos y desacuerdos en el libro de actas de la IAPE.',
+    ],
+  },
+  p4_1_2: {
+    focus: 'Sistema de triangulación de evidencias y construcción de aprendizaje colectivo.',
+    sequence: '1. Matriz de triangulación de fuentes → 2. Sistematización colaborativa → 3. Aprendizaje institucional.',
+    rubricCriteria: 'Nivel IV exige rigor en la triangulación de datos cuantitativos y cualitativos para evitar sesgos.',
+    suggestions: [
+      'Detallar la triangulación entre diarios de campo docentes, bitácoras estudiantiles, registros de observación y resultados de aprendizaje.',
+      'Establecer fichas semanales de sistematización colectiva para comparar hallazgos por grado/sección y validar mejoras pedagógicas.',
+      'Garantizar el resguardo ético de evidencias fotográficas y testimonios con códigos anónimos y consentimiento informado.',
+    ],
+  },
+};

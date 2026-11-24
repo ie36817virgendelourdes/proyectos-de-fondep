@@ -1,0 +1,6 @@
+{
+  "name": "CNPIE 2027 · Generador Pedagógico FONDEP",
+  "description": "Aplicación web y móvil offline (PWA) para formular, auditar y exportar proyectos de innovación e investigación educativa CNPIE 2027 del FONDEP.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
